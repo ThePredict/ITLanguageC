@@ -3,10 +3,10 @@ class Program
 {
   public static void Main (string[] args) 
   {
-    string Lyrics1 = "Oh , well imagine /";
-    string Lyrics2 = "As I'm pacing the pews in a church corridor /";
-    string Lyrics3 = "And I can't help but to hear /";
-    string Lyrics4 = "No, I can't help but to hear an exchanging of word.../";
+    string Lyrics1 = "Oh-oh-oh-oh-oh,";
+    string Lyrics2 = "oh-oh-oh-oh";
+    string Lyrics3 = "oh-oh-oh";
+    string Lyrics4 = "Caught in a bad romance";
     
     Console.WriteLine(Lyrics1);
     Console.WriteLine(Lyrics2);
