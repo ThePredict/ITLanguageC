@@ -3,14 +3,14 @@ class Program
 {
   public static void Main (string[] args) 
   {
-    var dateOfBirth = "MM/DD/YYYY";
-    var workID = "XXX-XXX-XXXX";
-    var cellPhone = "XXX-XXX-XXXX";
-    var personName = "Firstname Lastname";
+    string Lyrics1 = "Oh , well imagine /";
+    string Lyrics2 = "As I'm pacing the pews in a church corridor /";
+    string Lyrics3 = "And I can't help but to hear /";
+    string Lyrics4 = "No, I can't help but to hear an exchanging of word.../";
     
-    Console.WriteLine(personName);
-    Console.WriteLine(dateofbirth);
-    Console.WriteLine("work " + workID);
-    Console.WriteLine("cell " + cellPhone);
+    Console.WriteLine(Lyrics1);
+    Console.WriteLine(Lyrics2);
+    Console.WriteLine(Lyrics3);
+    Console.WriteLine(Lyrics4);
   }
 }
