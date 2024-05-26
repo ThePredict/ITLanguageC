@@ -3,10 +3,10 @@ class Program
 {
   public static void Main (string[] args) 
   {
-    string Lyrics1 = "Oh-oh-oh-oh-oh,";
-    string Lyrics2 = "oh-oh-oh-oh";
-    string Lyrics3 = "oh-oh-oh";
-    string Lyrics4 = "Caught in a bad romance";
+    string Lyrics1 = "Coming out of my cage";
+    string Lyrics2 = "And I've been doing just fine";
+    string Lyrics3 = "Gotta gotta be down";
+    string Lyrics4 = "Because I want it all";
     
     Console.WriteLine(Lyrics1);
     Console.WriteLine(Lyrics2);
