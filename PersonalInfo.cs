@@ -3,10 +3,10 @@ class Program
 {
   public static void Main (string[] args) 
   {
-    var dateofbirth = "6/24/1992";
-    var WorkID = "000-000-0101";
-    var cellphone = "000-000-0189";
-    var personName = "Lucinda Potter";
+    var dateofbirth = "MM/DD/YYYY";
+    var WorkID = "XXX-XXX-XXXX";
+    var cellphone = "XXX-XXX-XXXX";
+    var personName = "Firstname Lastname";
     
     Console.WriteLine(personName);
     Console.WriteLine(dateofbirth);
