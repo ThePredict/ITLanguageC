@@ -2,11 +2,18 @@ using System;
 class Program {
   public static void Main ()
   {
-   const double Cent_Per_Inch = 2.54;
-    double inches = 15994;
-    Console.WriteLine("{0} inches is {1} centimeters", inches, inches * Cent_Per_Inch);
-    
-    
+   const double Base_Rate = 200;
+       const double Hour_Rate = 150;
+       const double Mile_Rate = 2;
+        double inputMiles = 3000;
+        double inputHours = 103;
+        double total = 0;
+    total = Base_Rate + (inputMiles * Mile_Rate) + (inputHours * Hour_Rate);
+    Console.WriteLine("{0} + {1} * {2} + {3} * {4}", Base_Rate, Hour_Rate, inputMiles, Mile_Rate, inputHours);
+    Console.WriteLine("The total is {0}", total);
   }
 }
+    
+    
+
    
