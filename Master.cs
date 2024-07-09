@@ -3,30 +3,26 @@ class Program
 {
     static void Main(string [] args)
     {
-        int windspeed = (int)175.99;
-        if(windspeed >= 157)
+        int number, sum=0,n;
+        Console.Write("Enter the number of terms: ");
+        number = int.Parse(Console.ReadLine());
+        n = number;
+        for(int i = 1; i < number; i++)
         {
-            Console.WriteLine("Category 5");
+            if(number % i == 0)
+            {
+                sum = sum + i;
+            }
         }
-        else if (windspeed >= 130)
+        if (sum == n)
         {
-            Console.WriteLine("Category 4");
-        }
-        else if (windspeed >= 111)
-        {
-            Console.WriteLine("Category 3");
-        }
-        else if (windspeed >= 96)
-        {
-            Console.WriteLine("Category 2");
-        }
-        else if (windspeed >= 74)
-        {
-            Console.WriteLine("Category 1");
+            Console.WriteLine("The number is a perfect number.");
+            Console.ReadLine();
         }
         else
         {
-            Console.WriteLine("Not a hurricane");
+            Console.WriteLine("The number is not a perfect number.");
+            Console.ReadLine();
         }
     }
 }
