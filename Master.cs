@@ -14,25 +14,25 @@ class Program
         Console.WriteLine("Enter the salesperson initials or 'z' to quit");
         while (salesperson != 'Z')
         {
-            Console.Write("Who? (F,E,D) :");
+            Console.Write("Who? (D,E,F) :");
             salesperson = char.ToUpper(Console.ReadLine()[0]);
 
             switch (salesperson)
             {
-            case 'D':
-                Console.Write("(Danielle) Enter the sales amount: ");
-                Sumd += double.Parse(Console.ReadLine());
-                Countd++;
+            case 'F':
+                Console.Write("(Francis) Enter the sales amount: ");
+                Sumf += double.Parse(Console.ReadLine());
+                Countf++;
                 break;
             case 'E':
                 Console.Write("(Edward) Enter the sales amount: ");
                 Sume += double.Parse(Console.ReadLine());
                 Counte++;
                 break;
-            case 'F':
-                Console.Write("(Francis) Enter the sales amount: ");
-                Sumf += double.Parse(Console.ReadLine());
-                Countf++;
+            case 'D':
+                Console.Write("(Danielle) Enter the sales amount: ");
+                Sumd += double.Parse(Console.ReadLine());
+                Countd++;
                 break;
             case 'z':
                 break;
