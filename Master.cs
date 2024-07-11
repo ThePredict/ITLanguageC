@@ -3,57 +3,65 @@ class Program
 {
     static void Main(string [] args)
     {
-       int Countd = 0;
-        int Counte = 0;
-        int Countf = 0;
-        double Sumd = 0;
-        double Sume = 0;
-        double Sumf = 0;
-
-        char salesperson = 'n';
-        Console.WriteLine("Enter the salesperson initials or 'z' to quit");
-        while (salesperson != 'Z')
+       double sum = 0;
+        bool up = true;
+        bool down = true;
+        bool correct_temperature;
+        double temperature_range;
+        double[] temperature = new double[5];
+            for(int i = 0; i < 5; i++)
         {
-            Console.Write("Who? (D,E,F) :");
-            salesperson = char.ToUpper(Console.ReadLine()[0]);
-
-            switch (salesperson)
+            do
             {
-            case 'F':
-                Console.Write("(Francis) Enter the sales amount: ");
-                Sumf += double.Parse(Console.ReadLine());
-                Countf++;
-                break;
-            case 'E':
-                Console.Write("(Edward) Enter the sales amount: ");
-                Sume += double.Parse(Console.ReadLine());
-                Counte++;
-                break;
-            case 'D':
-                Console.Write("(Danielle) Enter the sales amount: ");
-                Sumd += double.Parse(Console.ReadLine());
-                Countd++;
-                break;
-            case 'z':
-                break;
-            default:
-                Console.WriteLine("Intermediate output: Error, invalid salesperson selected, please try again");
-                break;
+                Console.Write("INPUT Temperature : ");
+                correct_temperature = double.TryParse(Console.ReadLine(), out temperature_range);
+                if (!correct_temperature || temperature_range < -30 || temperature_range > 130)
+                {
+                    Console.WriteLine("EXCEPTION Temperature " + (temperature_range) + " is invalid, Please enter a valid temperature between -30 and 130");
+                }
+            }
+            while(!correct_temperature || temperature_range < -30 || temperature_range > 130);
+            temperature[i] = temperature_range;
+        }
+        for(int i = 1; i < temperature.Length; i++)
+        {
+            if(temperature[i] < temperature [i-1])
+            {
+                up = false;
+            }
+            else if (temperature[i] > temperature [i-1])
+            {
+                down = false;
             }
         }
-        Console.WriteLine("Danielle's sales total is {0}", Sumd);
-        Console.WriteLine("Edward's sales total is {0}", Sume);
-        Console.WriteLine("Francis's sales total is {0}", Sumf);
-        Console.WriteLine("Grand total of all sales is {0}", Sumd + Sume + Sumf);
-        if (Sumd > Sume)
+        if(up)
         {
-            if (Sumd > Sumf)
-                Console.WriteLine("Danielle has the highest sales");
-            else
-                Console.WriteLine("Francis has the highest sales");
+            Console.WriteLine("Getting warmer");
         }
-        else if (Sume > Sumf)
-            Console.WriteLine("Edward has the highest sales");
+        else if (down)
+        {
+            Console.WriteLine("Getting cooler");
+        }
+        else
+        {
+            Console.WriteLine("It's a mixed bag");
+        }
+        Console.Write("OUTPUT 5-day Temperature [");
+        for(int i = 0; i < temperature.Length; i++)
+        {
+            Console.Write(temperature[i]);
+            if(i < temperature.Length - 1)
+            {
+                Console.Write(",");
+            }   
+        }
+        Console.WriteLine("]");
+        foreach(double temp in temperature)
+        {
+            sum += temp;
+        }
+        double avgTemperature = sum / temperature.Length;
+        Console.WriteLine("OUTPUT Average Temperature is " + (avgTemperature) + " degrees");
     }
 }
 
