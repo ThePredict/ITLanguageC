@@ -20,7 +20,7 @@ class Program
             switch(option)
             {
             case "1":
-                CalculateRevenue();
+                Competition();
                 break;
             case "2":
                 Console.WriteLine("Thank you for using the Greenville Revenue App, good-bye! ");
@@ -31,18 +31,22 @@ class Program
             }
         }
     }
-    static void CalculateRevenue()
+    static void Competition()
     {
         Console.WriteLine("Please enter the number of contestants in previous year: ");
-        int previousYear = int.Parse(Console.ReadLine());
+        int previousYear = Int32.Parse(Console.ReadLine());
         Console.WriteLine("Please enter the number of contestants in current year: ");
-        int currentYear = int.Parse(Console.ReadLine());
-        int revenue = currentYear * 25;
-        bool isRevenueHigher = currentYear > previousYear;
-
-        Console.WriteLine($"Last year's competition had  {previousYear} contestants, and this year's has {currentYear} contestants.");
-        Console.WriteLine($"Revenue expected this year is {revenue}." );
-        Console.WriteLine($"It is {(isRevenueHigher ? "true" : "false")} that this year's competition is bigger than last year's. ");
+        int currentYear = Int32.Parse(Console.ReadLine());
+        if(currentYear > previousYear * 2)
+        Console.WriteLine("The competition is more than twice as big this year!");
+        else
+        if (currentYear > previousYear && currentYear <= (previousYear * 2))
+        Console.WriteLine("The competition is bigger than ever!");
+        else 
+        if (currentYear < previousYear)
+        Console.WriteLine("A tighter race this year! Come out and cast your vote!");
+        else
+        Console.WriteLine("Please enter a valid number");
         Console.WriteLine();
         Console.WriteLine("************************************");
         Console.WriteLine("*  The stars shine in Greenville.  *");
