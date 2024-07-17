@@ -38,10 +38,10 @@ class Program
         Console.WriteLine("Please enter the number of contestants in current year: ");
         int currentYear = Int32.Parse(Console.ReadLine());
         if(currentYear > previousYear * 2)
-        Console.WriteLine("The competition is more than twice as big this year!");
+        Console.WriteLine("The competition is bigger than ever!");
         else
         if (currentYear > previousYear && currentYear <= (previousYear * 2))
-        Console.WriteLine("The competition is bigger than ever!");
+        Console.WriteLine("The competition is more than twice as big this year!");
         else 
         if (currentYear < previousYear)
         Console.WriteLine("A tighter race this year! Come out and cast your vote!");
